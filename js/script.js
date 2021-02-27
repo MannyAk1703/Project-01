@@ -33,15 +33,15 @@ const quotes = [
       "The greatest glory in living lies not in never falling, but in rising every time we fall.",
     source: "Nelson Mandela",
     profession: "Politician",
-    citation: "",
-    year: "",
+    //citation: "",
+    //year: "",
   },
   {
     quote: "Only a life lived for others is a life worthwhile.",
     source: "Albert Einstein",
     profession: "Sciencetist",
-    citation: "",
-    year: "",
+    //citation: "",
+    //year: "",
   },
   {
     quote: "There is some good in this world, and it’s worth fighting for.",
@@ -54,8 +54,8 @@ const quotes = [
     quote: "Stay hungry, stay foolish.",
     source: "Steve Jobs",
     profession: "Entrepreneur",
-    citation: "",
-    year: "",
+    //citation: "",
+    //year: "",
   },
   {
     quote:
@@ -63,28 +63,28 @@ const quotes = [
     source: "William Shakespeare",
     profession: "Author",
     citation: "Hamlet",
-    year: "",
+    //year: "",
   },
   {
     quote: "Beware; for I am fearless, and therefore powerful.",
     source: "Mary Shelly",
     profession: "Author",
     citation: "Frankenstein",
-    year: "",
+    //year: "",
   },
   {
     quote: "The future belongs to those who prepare for it today.",
     source: "Malcolm X",
     profession: "Activist",
-    citation: "",
-    year: "",
+    //citation: "",
+    //year: "",
   },
   {
     quote: "The successful warrior is the average man, with laser-like focus.",
     source: "Bruce Lee",
     profession: "Actor",
-    citation: "",
-    year: "",
+    //citation: "",
+    //year: "",
   },
   {
     quote: "Anything worth dying for is certainly worth living for.",
@@ -109,7 +109,18 @@ function printQuote() {
   let message = ``;
   let result = getRandomQuote(quotes);
   message = `<p class='quote'> ${result.quote} </p>`;
-  message += `<p class='source'> ${result.source}<span class='citation'> ${result.citation} </span> <span class='profession'> ${result.profession} </span><span class='year'> ${result.year} </span> </p> `;
+  result.source !== undefined
+    ? (message += `<p class='source'> ${result.source}`)
+    : false;
+  result.citation !== undefined
+    ? (message += `<span class='citation'> ${result.citation} </span>`)
+    : false;
+  result.profession !== undefined
+    ? (message += `<span class='profession'> ${result.profession} </span>`)
+    : false;
+  result.year !== undefined
+    ? (message += `<span class='year'> ${result.year} </span> </p>`)
+    : false;
   console.log(message);
   //This code generates three random numbers and place in an array
   randomRGB = `rgb( ${Math.floor(Math.random() * 256)}, ${Math.floor(
