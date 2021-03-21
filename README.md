@@ -1,2 +1,2 @@
 # Project 01
-An app that displays random famous quotes each time a button is clicked.
+An app that displays random famous quotes each time the button is clicked.
